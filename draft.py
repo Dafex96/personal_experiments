@@ -2,22 +2,23 @@ import random
 import time
 
 phrases = [
-    "El auto es rojo",
-    "El niño esta jugando",
-    "La pelota es cuadrada"
+    "The car is red",
+    "The kid is playing",
+    "The ball is square",
+    "CR7 is the goat"
 ]
 
 phr = random.choice(phrases)
 
 s_time = time.time()
 
-user_phr = input(f"Escribe: {phr}\n")
+user_phr = input(f"Type this phrase: {phr}\n")
 
 if user_phr == phr:
-    print("¡Está bien escrito!")
+    print("¡You are correct!")
 else:
-    print("¡Te has equivocado en algo!")
+    print("¡You misspelled something!")
 
 e_time = time.time()
 
-print(f"¡Has tardado {e_time - s_time:.2f}s!")
+print(f"¡It took you {e_time - s_time:.2f}s!")
