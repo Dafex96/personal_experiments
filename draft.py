@@ -1,24 +1,31 @@
 import random
-import time
 
-phrases = [
-    "The car is red",
-    "The kid is playing",
-    "The ball is square",
-    "CR7 is the goat"
-]
+ppt = ["piedra","papel","tijera"]
 
-phr = random.choice(phrases)
+maquina = random.choice(ppt)
 
-s_time = time.time()
+while True:
+    try:
+        user = input("Elija Piedra, Papel o Tijera: ").lower()
+        break
+    except:
+        print("Opcion ingresada no valida, intentre nuevamente.")
 
-user_phr = input(f"Type this phrase: {phr}\n")
+print(f"La maquina escogió {maquina}, tu elegiste {user}")
 
-if user_phr == phr:
-    print("¡You are correct!")
+if maquina == user:
+    print("!Empate¡")
+elif maquina == "piedra" and user == "papel":
+    print("!Has ganado¡")
+elif maquina == "papel" and user == "piedra":
+    print("!Has perdido¡")
+elif maquina == "piedra" and user == "tijera":
+    print("!Has perdido¡")
+elif maquina == "tijera" and user == "piedra":
+    print("!Has ganado¡")
+elif maquina == "tijera" and user == "papel":
+    print("!Has perdido¡")
+elif maquina == "papel" and user == "tijera":
+    print("!Has ganado¡")
 else:
-    print("¡You misspelled something!")
-
-e_time = time.time()
-
-print(f"¡It took you {e_time - s_time:.2f}s!")
+    print("Opcion ingresada no válida")
